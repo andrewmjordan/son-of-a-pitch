@@ -18,9 +18,8 @@ jobs:
           extended: true
       - name: Build
         run: hugo --source site --destination public --minify
-      - run: ls -a && ls -a site
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./site/public
